@@ -113,7 +113,32 @@ function App() {
 
               </div>
             ))}
-
+            {/* 🔽 ADD TABLE HERE */}
+            <h3 style={{ marginTop: "20px" }}>Marks Summary Table</h3>
+        
+            <table className="result-table">
+              <thead>
+                <tr>
+                  <th>Page</th>
+                  <th>Marks Obtained</th>
+                  <th>Maximum Marks</th>
+                  <th>Percentage</th>
+                </tr>
+              </thead>
+        
+              <tbody>
+                {result.page_wise_marks.map((p) => (
+                  <tr key={p.page}>
+                    <td>Page {p.page}</td>
+                    <td>{p.marks}</td>
+                    <td>{p.max_marks}</td>
+                    <td>
+                      {((p.marks / p.max_marks) * 100).toFixed(1)}%
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
             {/* Marked PDF Viewer */}
             <a
               href={`${API_URL.replace("/evaluate", "")}/download/${result.final_marked_pdf}`}
