@@ -47,7 +47,7 @@ function App() {
     <div className="app">
 
       <header className="header">
-        <h1>AI Answer Sheet Evaluation System</h1>
+        <h1>Auto-Grading System</h1>
         <p>Upload Student & Reference PDFs to get automatic marks</p>
       </header>
 
